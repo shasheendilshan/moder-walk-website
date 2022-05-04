@@ -2,9 +2,9 @@ import React from "react";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="h-full w-72 bg-slate-200 flex flex-col items-center rounded-lg shadow-xl pt-2 scale-100 hover:scale-105 transition duration-300 ease-linear">
-      <div className="p-3 h-16">
-        <h3 className="text-md text-center">{product.title}</h3>
+    <div className="h-full w-72 bg-slate-200 flex flex-col mx-auto items-center rounded-lg shadow-xl pt-2 cursor-pointer scale-90 hover:scale-100 transition duration-300 ease-linear">
+      <div className="w-full p-2 h-24 overflow-hidden">
+        <h3 className="text-lg font-semibold text-center">{product.title}</h3>
       </div>
       <div className="h-48 w-48 mb-3 flex justify-center">
         <img

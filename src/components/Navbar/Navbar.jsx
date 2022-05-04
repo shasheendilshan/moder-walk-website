@@ -10,7 +10,7 @@ const Navbar = () => {
   const handleMobileNav = () => setShow(!show);
 
   return (
-    <div className="w-screen h-[80px] z-10 bg-zinc-200 drop-shadow-lg">
+    <div className="w-[100%] h-[80px] z-10 bg-zinc-200 drop-shadow-lg">
       <div className="px-10 flex justify-between h-full items-center ">
         <div className="md:hidden" onClick={handleMobileNav}>
           {!show ? <GiHamburgerMenu size={25} /> : <GrFormClose size={25} />}

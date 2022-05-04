@@ -1,6 +1,6 @@
 import Navbar from "./Navbar/Navbar";
 import ProductCard from "./ProductCard/ProductCard";
-import Card from "./Card/Card";
 import ProductsSlider from "./ProductsSlider/ProductsSlider";
+import Category from "./Category/Category";
 
-export { Navbar, ProductCard, Card, ProductsSlider };
+export { Navbar, ProductCard, ProductsSlider, Category };

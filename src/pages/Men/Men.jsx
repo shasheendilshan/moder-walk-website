@@ -1,32 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { ProductCard } from "../../components";
-import { useStateContext } from "../../context/StateContext";
+import { getSpecificCategory } from "../../api";
+import { Category } from "../../components";
 
 const Men = () => {
   const [mensClothingProducts, setMensClothingProducts] = useState([]);
-  const { allProducts } = useStateContext();
 
   useEffect(() => {
-    const mensCategory = allProducts?.filter(
-      (product) => product.category === "men's clothing"
-    );
-    setMensClothingProducts(mensCategory);
-  }, [allProducts]);
+    const getData = async () => {
+      const productData = await getSpecificCategory("men's clothing");
+      setMensClothingProducts(productData);
+    };
 
-  return (
-    <div className="flex flex-col min-h-screen">
-      <div className="mt-[80px]">
-        <h2 className="text-2xl font-bold text-zinc-600 m-10">
-          Men's Clothing
-        </h2>
-      </div>
-      <div className="w-full flex flex-wrap  gap-3 justify-center">
-        {mensClothingProducts?.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
-      </div>
-    </div>
-  );
+    getData();
+  }, []);
+
+  return <Category title="Men's Clothing" products={mensClothingProducts} />;
 };
 
 export default Men;

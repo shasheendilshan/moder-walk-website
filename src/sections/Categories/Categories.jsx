@@ -7,7 +7,7 @@ const Categories = () => {
       <div>
         <h2 className="text-2xl font-bold text-zinc-600 my-10">Categories</h2>
       </div>
-      <div className="h-64 flex flex-col md:flex-row gap-2 px-10 pb-10">
+      <div className="h-64 flex flex-col md:flex-row gap-2 px-7 pb-10">
         <Link
           to="/mens-clothing"
           className="h-24 md:h-48  md:w-1/2 bg-green-500 rounded-3xl flex justify-center items-center cursor-pointer"
