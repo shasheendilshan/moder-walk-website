@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar } from "./components";
+import { NavbarSimple } from "./components";
 import { Home, Men, Women } from "./pages";
 
 import { StateContext } from "./context/StateContext";
@@ -8,7 +8,8 @@ function App() {
   return (
     <StateContext>
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
+        <NavbarSimple />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mens-clothing" element={<Men />} />

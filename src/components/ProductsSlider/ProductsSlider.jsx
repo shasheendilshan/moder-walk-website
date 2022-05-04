@@ -4,13 +4,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import ProductCard from "./../ProductCard/ProductCard";
-import useWindowDimensions from "./../../hooks/useWindowsDimentions";
+import useWindowSize from "./../../hooks/useWindowSize";
 
 const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute top-[180px] right-2 md:right-[-20px] w-[50px] h-[50px] rounded-full bg-zinc-800/50 flex items-center justify-center "
+      className="absolute top-[180px] right-2 md:right-[-20px] w-[50px] h-[50px] rounded-full bg-[#FF5E84]/30 flex items-center justify-center "
       onClick={onClick}
     >
       <button>
@@ -23,7 +23,7 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute z-20 top-[180px] left-2 md:left-[-20px] w-[50px] h-[50px] rounded-full bg-zinc-800/50 flex items-center justify-center "
+      className="absolute z-10 top-[180px] left-2 md:left-[-20px] w-[50px] h-[50px] rounded-full bg-[#FF5E84]/30 flex items-center justify-center "
       onClick={onClick}
     >
       <button className="prev">
@@ -34,21 +34,21 @@ const PrevArrow = (props) => {
 };
 
 const ProductsSlider = ({ products }) => {
-  const { width } = useWindowDimensions();
+  const size = useWindowSize();
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow:
-      width < 640
+      size.width < 640
         ? 1
-        : width < 768
+        : size.width < 768
         ? 2
-        : width < 1024
+        : size.width < 1024
         ? 2
-        : width < 1280
-        ? 2
+        : size.width < 1280
+        ? 3
         : 4,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,

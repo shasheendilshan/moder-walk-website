@@ -16,7 +16,9 @@ const ProductCard = ({ product }) => {
 
       <div
         className={`h-36  w-full ${
-          product.category !== "men's clothing" ? "bg-pink-500" : "bg-green-500"
+          product.category !== "men's clothing"
+            ? "bg-[#FF5E84]"
+            : "bg-[#2BD9AF]"
         }  rounded-lg p-3 flex flex-col items-center overflow-auto`}
       >
         <h3 className="text-xl font-bold text-blue-900 mb-2">

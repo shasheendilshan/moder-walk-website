@@ -5,11 +5,15 @@ const Context = createContext();
 
 export const StateContext = ({ children }) => {
   const [allProducts, setAllProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       const allProducts = await getAllProducts();
-      setAllProducts(allProducts);
+      setAllProducts(allProducts.data);
+      setLoading(false);
+      console.log(allProducts.data);
     };
 
     fetchData();
@@ -20,6 +24,8 @@ export const StateContext = ({ children }) => {
       value={{
         allProducts,
         setAllProducts,
+        loading,
+        setLoading,
       }}
     >
       {children}

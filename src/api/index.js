@@ -2,11 +2,13 @@ import axios from "axios";
 
 export const getAllProducts = async () => {
   try {
-    const allProducts = await axios.get("https://fakestoreapi.com/products");
-    return allProducts?.data;
+    const allProducts = await axios.get(
+      "https://fakestoreapi.com/products?limit=18"
+    );
+    return { data: allProducts.data, error: 0 };
   } catch (error) {
     console.log(error.response);
-    return error.response;
+    return { data: [], error: error.response };
   }
 };
 
@@ -15,9 +17,9 @@ export const getSpecificCategory = async (category) => {
     const allProducts = await axios.get(
       `https://fakestoreapi.com/products/category/${category}`
     );
-    return allProducts?.data;
+    return { data: allProducts.data, error: 0 };
   } catch (error) {
     console.log(error.response);
-    return error.response;
+    return { data: [], error: error.response };
   }
 };

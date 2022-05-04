@@ -3,8 +3,11 @@ import { Categories, FlashSales } from "../../sections";
 
 const Home = () => {
   return (
-    <div>
+    <div className="mt-[80px]">
+      {/* flash Sales Section */}
       <FlashSales />
+
+      {/* Categories Section */}
       <Categories />
     </div>
   );
