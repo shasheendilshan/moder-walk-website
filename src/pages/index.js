@@ -1,5 +1,4 @@
-import Men from "./Men/Men";
-import Women from "./Women/Women";
 import Home from "./Home/Home";
+import CategoryPage from "./Category/CategoryPage";
 
-export { Home, Men, Women };
+export { Home, CategoryPage };

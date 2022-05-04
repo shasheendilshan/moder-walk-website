@@ -6,7 +6,6 @@ const Home = () => {
     <div className="mt-[80px]">
       {/* flash Sales Section */}
       <FlashSales />
-
       {/* Categories Section */}
       <Categories />
     </div>
