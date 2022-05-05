@@ -37,7 +37,7 @@ const ProductsSlider = ({ products }) => {
   const size = useWindowSize();
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow:
@@ -51,6 +51,8 @@ const ProductsSlider = ({ products }) => {
         ? 3
         : 4,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
