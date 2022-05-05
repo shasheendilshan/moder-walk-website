@@ -12,10 +12,12 @@ export const getAllProducts = async () => {
   }
 };
 
-export const getSpecificCategory = async (category) => {
+export const getSpecificCategory = async (category, limit) => {
   try {
     const allProducts = await axios.get(
-      `https://fakestoreapi.com/products/category/${category}`
+      `https://fakestoreapi.com/products/category/${category}${
+        limit ? "?limit=" + limit : ""
+      }`
     );
     return { data: allProducts.data, error: 0 };
   } catch (error) {

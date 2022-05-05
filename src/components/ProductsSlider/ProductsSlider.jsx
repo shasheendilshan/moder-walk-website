@@ -62,10 +62,6 @@ const ProductsSlider = ({ products }) => {
           return <ProductCard key={index} product={product} />;
         })}
       </Slider>
-
-      {/* <div>
-        width: {width} ~ height: {height}
-      </div> */}
     </div>
   );
 };
